@@ -5,18 +5,13 @@ const ctx = canvas.getContext('2d'); // custom context variable. Allows us to ca
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+let my_gradient = ctx.createLinearGradient(0, 0, 1200, 0); // creating a linear gradient. But I could color each root individually instead
 let drawing = false;
 let continueAnimation = true; // if continue animation is false, then we stop the animation
 let root_arr = []; // array which will contain all of our roots
 let growthVelocity = 0.1; // how fast our roots grow. The larger the number, the faster the growth 
 let density = 1;
 let maxSize = 7;
-
-let stopCount = 5; // initial amount of colors
-let my_gradient = ctx.createLinearGradient(0, 0, 1200, 0); // creating a linear gradient. But I could color each root individually instead
-for (let i = 0; i <= stopCount; i++) {
-    my_gradient.addColorStop(i / stopCount, randomColor(colorArray)); //add a color stop equal to 1/5 = .2, then at 2/5 = .4, and so on. The larger stopCount is, the more color stops.
-}
 
 class Root {
     constructor(x,y,growthVelocity, maxSize){
@@ -167,6 +162,12 @@ window.addEventListener('mouseup',function(){
 });
 
 document.addEventListener('DOMContentLoaded', function() { // make sure our HTML doc is loading before trying to query
+
+    let stopCount = 5; // initial amount of colors
+    for (let i = 0; i <= stopCount; i++) {
+        my_gradient.addColorStop(i / stopCount, randomColor(colorArray)); //add a color stop equal to 1/5 = .2, then at 2/5 = .4, and so on. The larger stopCount is, the more color stops.
+    }
+    
     const sidebarButton = document.querySelector('#sidebarButton');
     const sidebar = document.querySelector('#sidebar');
 

@@ -20,10 +20,6 @@ To get started with the project, follow these steps:
 
 Contributions are welcome. If you have any suggestions or improvements for the project, feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Future Features
 - Create a sliding range of values rather than using text boxes.
 - Add feature to select colors

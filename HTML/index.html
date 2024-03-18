@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=""X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Generative Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas1"></canvas>
+    <script src="/Scripts/main.js" ></script>
+
+    <div class="sidebar" id="sidebar">
+        <button class="sidebarButton" id="sidebarButton"></button>
+        
+        <ul class="menu">
+            <li>
+                <input type="number" id="growthVelocity" placeholder="Value between 0.01-20">
+                <button onclick="updateVelocity()">Update Growth Velocity</button>
+            </li>
+
+            <li>            
+                <input type="number" id="density" placeholder="Value between 1-100"> 
+                <button onclick="updateDensity()">Update Density</button>
+            </li>
+                  
+            <li>
+                <input type="number" id="maxSize" placeholder="Value between 1-50"> 
+                <button onclick="updateMaxSize()">Update Max Size</button>
+            </li>
+                  
+            <li>
+                <input type="number" id="colorCount" placeholder="Value between 1-15">
+                <button onclick="updateColorCount()">Update Color Count</button>
+            </li>
+            
+            <li>
+                <button onclick="restart()">Restart</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="createPNGButton" id="PNGButton" onclick="saveImage()">
+        <svg class="SVGIcon" viewBox="-2 0 25 25" width="70" height="80" xmlns="http://www.w3.org/2000/svg">>
+            <path id="myPath" d="M7 1C7 0.447716 7.44772 0 8 0C8.55228 0 9 0.447715 9 1V8.15777L12.2428 4.91501L13.657 6.32922L8.00012 11.9861L2.34326 6.32922L3.75748 4.91501L7 8.15753V1Z" fill="black"/>
+            <path id="myPath" d="M0 10H2V14H14V10H16V14C16 15.1046 15.1046 16 14 16H2C0.895431 16 0 15.1046 0 14V10Z" fill="black"/>
+        </svg>
+    </div>
+
+</body>
+</html>

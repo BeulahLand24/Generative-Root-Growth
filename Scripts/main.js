@@ -96,6 +96,22 @@ function updateColorCount(){
 
 }
 
+function updateVelocity() {
+    if (document.getElementById("growthVelocity").value >= 20){
+        growthVelocity = 20;
+        document.getElementById("growthVelocity").value = 20;
+
+    } else if (document.getElementById("growthVelocity").value <= 0.01) {
+        growthVelocity = 0.01
+        document.getElementById("growthVelocity").value = 0.01;
+
+    }
+    else {
+        growthVelocity = document.getElementById("growthVelocity").value;
+    }
+    
+}
+
 function saveImage() { 
     var canvas1 = document.getElementById("canvas1");        
     if (canvas1.getContext) {

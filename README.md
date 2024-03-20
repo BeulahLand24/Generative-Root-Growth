@@ -7,7 +7,7 @@ This project is an interactive generative art application that allows users to c
 ## Features
 
 - Allows users to adjust growth velocity, density, max size, and color count.
-- Provides a restart button to reset the art.
+- Allows users to download PNG of their generated art
 - Interactive interface with a sidebar for parameter controls.
 
 ## Getting Started
@@ -23,9 +23,8 @@ To get started with the project, follow these steps:
 Contributions are welcome. If you have any suggestions or improvements for the project, feel free to open an issue or submit a pull request.
 
 ## Future Features
-- Create a sliding range of values rather than using  atext field.
-- Add feature to select colors.
-- Increase export resolution for higher quality PNGs.
-- Integrate sharing feature.
+- A share button
+- Organize the style
+- Possibly include more parameters 
 
 

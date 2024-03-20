@@ -56,7 +56,6 @@ function updateMaxSize() {
     output = slider.value; // Display the default slider value
   
     maxSize = output
-    console.log(growthVelocity)
   }
 
 
@@ -65,7 +64,6 @@ function updateDensity() {
     output = slider.value; // Display the default slider value
   
     density = output
-    console.log(growthVelocity)
   }
 
 function updateColorCount(){
@@ -73,11 +71,9 @@ function updateColorCount(){
     delete my_gradient.ctx;
     stopCount = document.getElementById("color-range"); // Number of color stops between 0 and 1
     output = stopCount.value;
-    console.log(output)
     my_gradient = ctx.createLinearGradient(0, 0, 1200, 0);
     for (let i = 1; i <= output; i++) {
         my_gradient.addColorStop(i / output, randomColor(colorArray));
-        console.log("stop added at " + i / output)
     }
 
 }
@@ -87,7 +83,6 @@ function updateMaxSize() {
     output = slider.value; // Display the default slider value
   
     maxSize = output
-    console.log(growthVelocity)
   }
 
 
@@ -96,7 +91,6 @@ function updateVelocity() {
     output = slider.value; // Display the default slider value
   
     growthVelocity = output
-    console.log(growthVelocity)
   }
 
 

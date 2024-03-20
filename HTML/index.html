@@ -2,42 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv=""X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Generative Art</title>
     <link rel="stylesheet" href="style.css">
+
+    <canvas id="canvas1"></canvas>
+    
+    <script src="https://cdn.jsdelivr.net/npm/range-slider-input@2.4/dist/rangeslider.umd.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../Scripts/main.js"></script>
+    
 </head>
 
 <body>
-    <canvas id="canvas1"></canvas>
-    <script src="../Scripts/main.js" ></script>
 
     <div class="sidebar" id="sidebar">
         <button class="sidebarButton" id="sidebarButton"></button>
         
         <ul class="menu">
             <li>
-                <input type="number" id="growthVelocity" placeholder="Value between 0.01-20">
-                <button onclick="updateVelocity()">Update Growth Velocity</button>
+                <div class="slidecontainer" >
+                    <input type="range" min="1" max="20" value="7" class="slider" id="velocity-range">
+                    <button class="button" onclick="updateVelocity()">Update Growth Velocity</button>
+                </div>
             </li>
 
             <li>            
-                <input type="number" id="density" placeholder="Value between 1-100"> 
-                <button onclick="updateDensity()">Update Density</button>
+                <div class="slidecontainer" >
+                    <input type="range" min="20" max="200" value="50" class="slider" id="density-range">
+                    <button class="button" onclick="updateDensity()">Update Density</button>
+                </div>
             </li>
                   
             <li>
-                <input type="number" id="maxSize" placeholder="Value between 1-50"> 
-                <button onclick="updateMaxSize()">Update Max Size</button>
+                <div class="slidecontainer" >
+                    <input type="range" min="1" max="50" value="25" class="slider" id="size-range">
+                    <button class="button" onclick="updateMaxSize()">Update Max Size</button>
+
+                </div>
             </li>
                   
             <li>
-                <input type="number" id="colorCount" placeholder="Value between 1-15">
-                <button onclick="updateColorCount()">Update Color Count</button>
+                <div class="slidecontainer" >
+                    <input type="range" min="1" max="15" value="2" class="slider" id="color-range">
+                    <button class="button" onclick="updateColorCount()">Update Color Count</button>
+
+                </div>
             </li>
             
             <li>
-                <button onclick="restart()">Restart</button>
+                <button class="button" id="restart" onclick="restart()">Restart</button>
             </li>
         </ul>
     </div>

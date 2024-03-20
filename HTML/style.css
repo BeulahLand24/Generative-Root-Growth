@@ -52,7 +52,7 @@ button{
 .sidebarButton {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -70,6 +70,7 @@ button{
     background-image: url("../Images/Hamburger_icon.png"); 
     margin-left: 1px;
 }
+
 
 .createPNGButton {
     position: fixed;
@@ -91,7 +92,7 @@ button{
 }
 
 .menu li {
-    padding: 10px;
+    padding: 35px;
 }
 
 #myPath {
@@ -101,6 +102,99 @@ button{
     stroke-linejoin: round;
 }
 
+#restart {
+    margin-left: -40px;
+    padding: 17px 25px;
+}
+
 .SVGIcon {
     margin-left: 3px;
 }
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 60%; /* Full-width */
+    height: 20px; /* Specified height */
+    background: #b6b6b6; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin: -40px;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #000000; /* Green background */
+    cursor: grab; /* Cursor on hover */
+  }
+
+  .button {
+    appearance: button;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 2px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: absolute;
+    margin-inline: 20px;
+    margin-top: -12px;
+    margin-left: 50px;
+  }
+  
+  .button:hover {
+    transform: translateY(-2px);
+    transition: 0.1s ease-in-out;
+}
+  
+  .button:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+  }
+  
+  .button:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+  }
+  
+  @media (min-width: 768px) {
+    .button {
+      padding: 12px 50px;
+    }
+  }
+
+@media (min-width: 768px) {
+  .button {
+    padding: 5px 5px;
+  }
+}
+

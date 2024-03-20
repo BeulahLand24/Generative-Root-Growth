@@ -13,6 +13,7 @@ let growthVelocity = 0.1; // how fast our roots grow. The larger the number, the
 let density = 1;
 let maxSize = 7;
 
+
 class Root {
     constructor(x,y,growthVelocity, maxSize){
         this.x = x;
@@ -50,62 +51,54 @@ class Root {
     }
 }
 
-function updateMaxSize() { // updates the max size a root can be (still random)
-    if (document.getElementById("maxSize").value >= 50){
-        maxSize = 50;
-        document.getElementById("maxSize").value = 50;
-    }
-    else if(document.getElementById("maxSize").value <= 1) {
-        maxSize = 1;
-        document.getElementById("maxSize").value = 1;
-    } else {
-        maxSize = document.getElementById("maxSize").value
-        document.getElementById("maxSize").value = maxSize;
-    }
-    
-}
+function updateMaxSize() {
+    var slider = document.getElementById("size-range");
+    output = slider.value; // Display the default slider value
+  
+    maxSize = output
+    console.log(growthVelocity)
+  }
 
-function updateDensity() { // changes cluster density
-    if (document.getElementById("density").value >= 100){
-        density = 100;
-        document.getElementById("density").value = 100;
-    }
-    else if(document.getElementById("density").value <= 1) {
-        density = 1;
-        document.getElementById("density").value = 1;
-    } else {
-        density = document.getElementById("density").value
-        document.getElementById("density").value = density;
-    }
-    
-}
+
+function updateDensity() {
+    var slider = document.getElementById("density-range");
+    output = slider.value; // Display the default slider value
+  
+    density = output
+    console.log(growthVelocity)
+  }
 
 function updateColorCount(){
     restart(); //clear screen and restart stop every animation
     delete my_gradient.ctx;
-    stopCount = Math.floor(document.getElementById("colorCount").value); // Number of color stops between 0 and 1
+    stopCount = document.getElementById("color-range"); // Number of color stops between 0 and 1
+    output = stopCount.value;
+    console.log(output)
     my_gradient = ctx.createLinearGradient(0, 0, 1200, 0);
-    for (let i = 1; i <= stopCount; i++) {
-        my_gradient.addColorStop(i / stopCount, randomColor(colorArray));
+    for (let i = 1; i <= output; i++) {
+        my_gradient.addColorStop(i / output, randomColor(colorArray));
+        console.log("stop added at " + i / output)
     }
 
 }
+
+function updateMaxSize() {
+    var slider = document.getElementById("size-range");
+    output = slider.value; // Display the default slider value
+  
+    maxSize = output
+    console.log(growthVelocity)
+  }
+
 
 function updateVelocity() {
-    if (document.getElementById("growthVelocity").value >= 20){
-        growthVelocity = 20;
-        document.getElementById("growthVelocity").value = 20;
+    var slider = document.getElementById("velocity-range");
+    output = slider.value; // Display the default slider value
+  
+    growthVelocity = output
+    console.log(growthVelocity)
+  }
 
-    } else if (document.getElementById("growthVelocity").value <= 0.01) {
-        growthVelocity = 0.01
-        document.getElementById("growthVelocity").value = 0.01;
-
-    }
-    else {
-        growthVelocity = document.getElementById("growthVelocity").value;
-    }
-    
-}
 
 function saveImage() { 
     var canvas1 = document.getElementById("canvas1");        
@@ -143,6 +136,9 @@ let colorArray =  ['aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', '
   'plum', 'powderblue', 'purple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 
   'slategray', 'slategrey', 'snow', 'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen']; // we will randomly select from colorArray 
 
+
+
+
 window.addEventListener('mousemove',function(e){
     if (drawing){
         for (let i =0; i < density; i++){  // create X amount of roots where X is our density
@@ -179,6 +175,8 @@ document.addEventListener('DOMContentLoaded', function() { // make sure our HTML
     sidebarButton.addEventListener('click', openMenu); // toggle sidbar.open
     sidebar.classList.toggle('open');
     sidebarButton.classList.toggle('open'); // make sure menu is closed upon starting application
+
+    
 
 });
 

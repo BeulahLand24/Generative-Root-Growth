@@ -14,7 +14,7 @@ This project is an interactive generative art application that allows users to c
 
 To get started with the project, follow these steps:
 
-1. Clone the repository: `git clone <repository_url>`
+1. Clone the repository: `git clone https://github.com/BeulahLand24/Generative-Root-Growth.git`
 2. Open the `index.html` file in your web browser. I recommend Live Server for running the HTML.
 3. Use the input fields and buttons in the sidebar to adjust parameters and interact with the art.
 
@@ -27,6 +27,8 @@ Contributions are welcome. If you have any suggestions or improvements for the p
 - Organize CSS styling further
 - Possibly include more parameters
 - Fix bug that lets users draw behind the sidebar
-- Expand upon color feature 
+- Fix Bug that stretches HTML canvas
+- Expand upon color feature
+
 
 

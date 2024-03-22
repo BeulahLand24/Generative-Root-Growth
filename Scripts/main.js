@@ -174,4 +174,26 @@ document.addEventListener('DOMContentLoaded', function() { // make sure our HTML
 
 });
 
+window.addEventListener("resize",function(){
+
+    /*
+    We need to store the canvas in a temporary variable. Here's the explanation why:
+
+    When the canvas element is created, and subsequently whenever the width and height attributes
+    are set (whether to a new value or to the previous value), the bitmap and any associated contexts
+    must be cleared back to their initial state and reinitialized with
+    the newly specified coordinate space dimensions.
+    Related StackOverflow topic:
+    https://stackoverflow.com/questions/5414663/disable-reset-in-html5-canvas-when-width-height-is-set
+    */
+    var tempCanvas = document.createElement('canvas');
+    tempCanvas.width=canvas.width;
+    tempCanvas.height=canvas.height;
+    var tempCtx = tempCanvas.getContext('2d');
+    tempCtx.drawImage(canvas, 0, 0);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.drawImage(tempCanvas, 0, 0);
+});
+
 

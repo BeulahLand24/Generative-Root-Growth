@@ -1,14 +1,14 @@
 ﻿# Generative-Root-Growth
 
-This project is an interactive generative art application that allows users to control various parameters to create unique and random art pieces.
+This project is an interactive generative art application that allows users to control various parameters and create unique and random art pieces.
 
 ![](https://github.com/BeulahLand24/Generative-Root-Growth/blob/main/Images/ezgif-4-42c272a148.gif)
 
 ## Features
 
 - Allows users to adjust growth velocity, density, max size, and color count.
-- Allows users to download a PNG of their generated art.
-- Interactive interface with a sidebar for parameter controls.
+- Users can download a PNG of their generated art.
+- Interface with a sidebar for parameter controls.
 
 ## Getting Started
 
